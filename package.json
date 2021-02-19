@@ -1,0 +1,23 @@
+{
+  "name": "cypress-bruno-udemy",
+  "version": "1.0.0",
+  "description": "automation cypress-framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtistaVeKaras/cypress-bruno-udemy.git"
+  },
+  "author": "Claudio Correia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtistaVeKaras/cypress-bruno-udemy/issues"
+  },
+  "homepage": "https://github.com/ArtistaVeKaras/cypress-bruno-udemy#readme",
+  "devDependencies": {
+    "cypress": "^6.5.0",
+    "cypress-xpath": "^1.6.2"
+  }
+}
