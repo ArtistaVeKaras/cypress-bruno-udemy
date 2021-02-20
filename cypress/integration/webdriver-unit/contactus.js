@@ -20,4 +20,17 @@ describe('Test Contact Us form via WebDriverUni', () =>{
         cy.get('[type="submit"]').click()
         cy.get('body').contains('Error: all fields are required')
     })
+    /**
+     * this test does not open a new tab
+     * when clicking on a new link tab
+     * the jquery removeAttr eliminates this 
+     */
+    it.only('should not be able to submit a successful submission via contact us form as all fields are required' ,() =>{ 
+        cy.visit('http://www.webdriveruniversity.com/')
+        cy.get('#contact-us').invoke('removeAttr','target').click({force: true})
+        cy.get('[name="first_name"]').type('Akira')
+        cy.get('[name="last_name"]').type('Last_name') 
+        cy.get('[type="submit"]').click()
+        cy.get('body').contains('Error: all fields are required')
+    })   
 })
