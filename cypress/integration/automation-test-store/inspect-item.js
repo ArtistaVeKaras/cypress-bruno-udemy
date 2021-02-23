@@ -4,10 +4,14 @@ describe("Automation Test Store", () => {
   it("should be able to submit a successful submission via contact us form", () => {
     cy.visit("https://www.automationteststore.com/");
     cy.document().should("have.property", "charset", "UTF-8");
-    cy.get('.prdocutname').contains('Skinsheen Bronzer Stick').click().then((itemHeader) =>{
-      console.log('Selected text is: ' + itemHeader.text())
+    cy.get('.prdocutname').contains('Skinsheen Bronzer Stick').click().then(($itemHeader) =>{
+      console.log('Selected text is: ' + $itemHeader.text())
     })
-    console.log('this shoul log now')
+    /** 
+     * the log function will be executed right before the code is executed
+     * the .then logs only after a a certain conditions is meet
+    */
+    console.log('this should log now')
   });
   it("should be able to submit a successful submission via contact us form", () => {
     cy.visit("https://www.automationteststore.com/");
