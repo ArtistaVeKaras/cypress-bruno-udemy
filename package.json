@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ArtistaVeKaras/cypress-bruno-udemy#readme",
   "devDependencies": {
     "cypress": "^6.5.0",
+    "cypress-file-upload": "^5.0.2",
     "cypress-xpath": "^1.6.2"
   }
 }
