@@ -33,3 +33,7 @@ button[title="Submit"]
 ## Runs a specific file
 
 ./node_modules/.bin/cypress run --spec cypress/integration/automation-test-store/contact-us.js
+
+## Override env variable
+
+./node_modules/.bin/cypress run --browser chrome --spec cypress/integration/webdriver-unit/contactus.js --env firstName=tim
