@@ -1,6 +1,10 @@
 /// <reference types="Cypress" />
+import HomePage_PO from "../../support/pageObject/webdriver-uni/Homepage_PO";
+import ContactUsPage_PO from "../../support/pageObject/webdriver-uni/ContactUsPage_PO";
 
 describe("Test Contact Us form via WebDriverUni", () => {
+  const contactUsPage = new ContactUsPage_PO();
+  const homepage = new HomePage_PO();
   before(function () {
     cy.fixture("example").then(function (data) {
       this.data = data;
@@ -9,15 +13,14 @@ describe("Test Contact Us form via WebDriverUni", () => {
   });
 
   beforeEach(function () {
-    cy.visit(Cypress.env("webdriver_uni") + "/Contact-Us/contactus.html");
+    homepage.visitHomePage();
+    homepage.contactUsPage();
+    // cy.visit(Cypress.env("webdriver_uni") + "/Contact-Us/contactus.html"); // both methods work
     // cy.visit("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
-    cy.document().should("have.property", "charset", "UTF-8");
-    cy.title().should("include", "WebDriver | Contact Us");
-    cy.url().should("include", "contactus");
   });
 
-  it("should be able to submit a successful submission via contact us form", () => {
-    cy.webdriverUniSubmissionForm(
+  it.only("should be able to submit a successful submission via contact us form", () => {
+    contactUsPage.contactFormSubmission(
       globalThis.data.first_name,
       globalThis.data.last_name,
       globalThis.data.email,
@@ -39,6 +42,7 @@ describe("Test Contact Us form via WebDriverUni", () => {
   /**
    * does the same as the above
    * but extract data from the env file
+   * and does not include the email
    * */
   it("should not be able to submit a successful submission via contact us form as all fields are required", () => {
     cy.webdriverUniSubmissionForm(

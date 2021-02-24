@@ -25,6 +25,15 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 import "cypress-file-upload";
 
+Cypress.Commands.add("navigateToWebdriverHomePage", () => {
+  cy.visit("/");
+  cy.document().should("have.property", "charset", "UTF-8");
+  cy.title().should("include", "WebDriver");
+  cy.get("#dropdown-checkboxes-radiobuttons")
+    .invoke("removeAttr", "target")
+    .click();
+});
+
 Cypress.Commands.add("addProduct", (productName) => {
   cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
     if ($el.text().includes(productName)) {
@@ -34,13 +43,13 @@ Cypress.Commands.add("addProduct", (productName) => {
 });
 
 Cypress.Commands.add("addProductToBasket", (productName) => {
-    cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
-      if ($el.text().includes(productName)) {
-          cy.log($el.text())
-          cy.get('.productcart').eq(index).click()
-      }
-    });
+  cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
+    if ($el.text().includes(productName)) {
+      cy.log($el.text());
+      cy.get(".productcart").eq(index).click();
+    }
   });
+});
 
 Cypress.Commands.add(
   "webdriverUniSubmissionForm",
