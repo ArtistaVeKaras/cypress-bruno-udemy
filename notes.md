@@ -62,3 +62,11 @@ npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml
 ## Merge moachwasome results
 
 npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json
+
+## Use values store in the config file
+
+npx cypress open --env configFile=staging
+
+## Run test with the configFile configuration
+
+ npx cypress run --spec cypress/integration/webdriver-uni/contactus.js --env configFile=staging
