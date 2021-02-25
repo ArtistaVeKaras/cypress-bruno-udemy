@@ -1,7 +1,8 @@
 /// <reference types="Cypress" />
 
 beforeEach(() => {
-  cy.visit("http://www.webdriveruniversity.com/");
+  // cy.viewport(550, 650);
+  cy.visit("https://www.webdriveruniversity.com/");
   cy.document().should("have.property", "charset", "UTF-8");
   cy.title().should("include", "WebDriver");
 });

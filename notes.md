@@ -37,3 +37,12 @@ button[title="Submit"]
 ## Override env variable
 
 ./node_modules/.bin/cypress run --browser chrome --spec cypress/integration/webdriver-unit/contactus.js --env firstName=tim
+
+## Run test and records videos
+
+./node_modules/.bin/cypress run --spec cypress/integration/webdriver-unit/contactus.js
+
+## Cypress DashboardKey 
+
+8ed5fa4c-e487-431b-a423-62d7f40b1775
+./node_modules/.bin/cypress run --record --key 8ed5fa4c-e487-431b-a423-62d7f40b1775

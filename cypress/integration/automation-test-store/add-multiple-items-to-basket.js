@@ -14,6 +14,8 @@ describe("Add multiple items to basket", () => {
   });
 
   beforeEach(() => {
+    cy.clearLocalStorage();
+    cy.clearCookies();
     autoStore.visitAutoStore();
     autoStore.clickTheHairLink();
   });

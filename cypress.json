@@ -3,11 +3,15 @@
   "chromeWebSecurity": false,
   "defaultCommandTimeout": 10000,
   "pageLoadTimeout": 30000,
+  "videosFolder": "cypress/videos/testExecution",
+  "viewportHeight": 1080,
+  "viewportWidth": 1920,
 
   "env": {
     "autoStore": "https://www.automationteststore.com/",
     "webdriver_uni": "https://www.webdriveruniversity.com/",
     "firstName": "sara",
     "lastName": "kenddy"
-  }
+  },
+  "projectId": "9duuib"
 }

@@ -6,7 +6,8 @@ class AutoStoreHairCarePagePo {
         //freezes the test in dev tools.
       });
     });
-    cy.get(".dropdown-toggle > .fa").click().debug();
+    // cy.get(".dropdown-toggle > .fa").click().debug();
+    cy.get(".dropdown-toggle > .fa").click();
   }
 }
 export default AutoStoreHairCarePagePo;
