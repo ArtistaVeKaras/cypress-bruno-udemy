@@ -13,6 +13,7 @@ describe("Test Contact Us form via WebDriverUni", () => {
   });
 
   beforeEach(function () {
+    Cypress.config('defaultCommandTimeout',2000)//overrides the default set timeout to 20s
     homepage.visitHomePage();
     homepage.contactUsPage();
     // cy.visit(Cypress.env("webdriver_uni") + "/Contact-Us/contactus.html"); // both methods work

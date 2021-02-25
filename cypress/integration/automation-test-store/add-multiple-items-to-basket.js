@@ -19,8 +19,7 @@ describe("Add multiple items to basket", () => {
   });
 
   it("Add specific items to basket", () => {
-    globalThis.data.productName.forEach(function (element) {
-      hairCare.addProductToBasket(element);
-    });
+    hairCare.addHairCareProductToBasket();
+    // cy.addProductToBasket();
   });
 });
