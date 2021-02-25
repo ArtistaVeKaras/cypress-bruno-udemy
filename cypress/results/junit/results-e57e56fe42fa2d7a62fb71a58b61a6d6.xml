@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="3.5100" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2021-02-25T12:35:42" tests="0" file="cypress/integration/webdriver-uni/mouse-actions.js" time="0.0000" failures="0">
-  </testsuite>
-  <testsuite name="Test mouse actions" timestamp="2021-02-25T12:35:42" tests="1" time="3.5100" failures="0">
-    <testcase name="Test mouse actions should be able to click and hold the button and get attr of that btn" time="3.5100" classname="should be able to click and hold the button and get attr of that btn">
-    </testcase>
-  </testsuite>
-</testsuites>

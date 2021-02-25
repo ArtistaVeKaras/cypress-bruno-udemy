@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="2.4380" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2021-02-25T12:22:08" tests="0" file="cypress/integration/automation-test-store/variable-and-cy-command.js" time="0.0000" failures="0">
-  </testsuite>
-  <testsuite name="Verifying variables, cyress commands and hquery commands" timestamp="2021-02-25T12:22:08" tests="1" time="2.4380" failures="0">
-    <testcase name="Verifying variables, cyress commands and hquery commands Navigating to specific product pages" time="2.4380" classname="Navigating to specific product pages">
-    </testcase>
-  </testsuite>
-</testsuites>

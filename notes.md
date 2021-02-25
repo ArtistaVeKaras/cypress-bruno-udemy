@@ -42,7 +42,7 @@ button[title="Submit"]
 
 ./node_modules/.bin/cypress run --spec cypress/integration/webdriver-unit/contactus.js
 
-## Cypress DashboardKey 
+## Cypress DashboardKey
 
 8ed5fa4c-e487-431b-a423-62d7f40b1775
 ./node_modules/.bin/cypress run --record --key 8ed5fa4c-e487-431b-a423-62d7f40b1775
@@ -55,6 +55,10 @@ npm run triggerAllTests-chrome
 npm run triggerAllTests-dashboard
 npm run triggerAllTests-webdriver-uni
 
-## Merge junit results 
+## Merge junit results
 
 npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml
+
+## Merge moachwasome results
+
+npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json

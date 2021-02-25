@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="4.8750" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2021-02-25T12:24:04" tests="0" file="cypress/integration/webdriver-uni/iframes.js" time="0.0000" failures="0">
-  </testsuite>
-  <testsuite name="Handle Iframes &amp; Models" timestamp="2021-02-25T12:24:04" tests="1" time="4.8750" failures="0">
-    <testcase name="Handle Iframes &amp; Models Handle webdriver iframe * Models" time="4.8750" classname="Handle webdriver iframe * Models">
-    </testcase>
-  </testsuite>
-</testsuites>

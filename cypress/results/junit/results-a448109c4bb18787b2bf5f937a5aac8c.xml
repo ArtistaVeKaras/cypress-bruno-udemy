@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="1.4260" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2021-02-25T12:24:14" tests="0" file="cypress/integration/webdriver-uni/js-alert.js" time="0.0000" failures="0">
-  </testsuite>
-  <testsuite name="Handle js alert" timestamp="2021-02-25T12:24:14" tests="1" time="1.4260" failures="0">
-    <testcase name="Handle js alert Validate js alert works correctly when clicked on cancel challenge" time="1.4260" classname="Validate js alert works correctly when clicked on cancel challenge">
-    </testcase>
-  </testsuite>
-</testsuites>
