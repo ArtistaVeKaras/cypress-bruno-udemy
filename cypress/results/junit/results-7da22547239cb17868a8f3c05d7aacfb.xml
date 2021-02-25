@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.1340" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-02-25T12:23:16" tests="0" file="cypress/integration/webdriver-uni/contactus.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test Contact Us form via WebDriverUni" timestamp="2021-02-25T12:23:16" tests="1" time="5.1340" failures="0">
+    <testcase name="Test Contact Us form via WebDriverUni should be able to submit a successful submission via contact us form" time="5.1340" classname="should be able to submit a successful submission via contact us form">
+    </testcase>
+  </testsuite>
+</testsuites>

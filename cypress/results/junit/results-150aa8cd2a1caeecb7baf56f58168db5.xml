@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.8030" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-02-25T12:33:51" tests="0" file="cypress/integration/other/super-domain.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test Contact Us form via WebDriverUni" timestamp="2021-02-25T12:33:51" tests="1" time="0.8030" failures="0">
+    <testcase name="Test Contact Us form via WebDriverUni should not be able to access to different domains via use actions" time="0.8030" classname="should not be able to access to different domains via use actions">
+    </testcase>
+  </testsuite>
+</testsuites>

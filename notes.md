@@ -46,3 +46,15 @@ button[title="Submit"]
 
 8ed5fa4c-e487-431b-a423-62d7f40b1775
 ./node_modules/.bin/cypress run --record --key 8ed5fa4c-e487-431b-a423-62d7f40b1775
+
+## Run your test scripts from the package.json file
+
+npm run triggerAllTests-headless
+npm run triggerAllTests-headed
+npm run triggerAllTests-chrome
+npm run triggerAllTests-dashboard
+npm run triggerAllTests-webdriver-uni
+
+## Merge junit results 
+
+npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml

@@ -13,5 +13,9 @@
     "firstName": "sara",
     "lastName": "kenddy"
   },
-  "projectId": "9duuib"
+  "projectId": "9duuib",
+   "reporter": "cypress-multi-reporters",
+   "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
 }

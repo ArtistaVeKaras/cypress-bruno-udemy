@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.7580" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-02-25T12:22:40" tests="0" file="cypress/integration/webdriver-uni/autocomplete.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Interact with autocomplpete" timestamp="2021-02-25T12:22:40" tests="1" time="2.7580" failures="0">
+    <testcase name="Interact with autocomplpete Select specific product via autocomplpete list" time="2.7580" classname="Select specific product via autocomplpete list">
+    </testcase>
+  </testsuite>
+</testsuites>
