@@ -8,6 +8,7 @@
   "viewportWidth": 1920,
 
   "env": {
+    "RETRIES": 2,
     "autoStore": "https://www.automationteststore.com/",
     "webdriver_uni": "https://www.webdriveruniversity.com/",
     "firstName": "sara",

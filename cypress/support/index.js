@@ -12,17 +12,18 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-require('cypress-xpath')
+require("cypress-xpath");
+require("cypress-plugin-retries");
 // Import commands.js using ES2015 syntax:
-import './commands'
+import "./commands";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 //ignores the xhr logs
 Cypress.Server.defaults({
-    delay: 500,
-    force404: false,
-    ignore: (xhr) =>{ 
-        return true;
-    }
-})
+  delay: 500,
+  force404: false,
+  ignore: (xhr) => {
+    return true;
+  },
+});

@@ -70,3 +70,7 @@ npx cypress open --env configFile=staging
 ## Run test with the configFile configuration
 
  npx cypress run --spec cypress/integration/webdriver-uni/contactus.js --env configFile=staging
+
+ ## Retries test if test fails
+
+ CYPRESS_RETRIES=1 npm run triggerAllTests-automation-autostore
