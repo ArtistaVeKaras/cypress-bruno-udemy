@@ -58,7 +58,7 @@ describe("Test Contact Us form via WebDriverUni", () => {
   /**
    * this test does not open a new tab
    * when clicking on a new link tab
-   * the jquery removeAttr eliminates this
+   * the jquery removeAttr eliminates this....
    */
   it.only("should not be able to submit a successful submission via contact us form as all fields are required", () => {
     Cypress.currentTest.retries(2);
