@@ -54,6 +54,7 @@ npm run triggerAllTests-headed
 npm run triggerAllTests-chrome
 npm run triggerAllTests-dashboard
 npm run triggerAllTests-webdriver-uni
+npm run triggerAllTests-automation-dashboard
 
 ## Merge junit results
 
