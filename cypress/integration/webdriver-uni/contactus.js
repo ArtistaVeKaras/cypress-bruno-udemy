@@ -61,7 +61,7 @@ describe("Test Contact Us form via WebDriverUni", () => {
    * the jquery removeAttr eliminates this....
    * this is just a comment
    */
-  it.only("should not be able to submit a successful submission via contact us form as all fields are required", () => {
+  it("should not be able to submit a successful submission via contact us form as all fields are required", () => {
     Cypress.currentTest.retries(2);
     cy.visit(Cypress.env("webdriver_uni"));
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
@@ -69,5 +69,26 @@ describe("Test Contact Us form via WebDriverUni", () => {
     cy.get('[name="last_name"]').type(globalThis.data.last_name);
     cy.get('[type="submit"]').click();
     cy.get("body").contains("Error: all fields are required");
+  });
+  /**
+   * the same as the above but the test only runs if
+   * the browser is set to firefox
+   */
+  it("should not be able to submit a successful submission via contact us form as all fields are required", () => {
+    if (Cypress.isBrowser("firefox")) {
+      cy.log('I am running in a firefox browser')
+      //code block goes here      
+    }
+     else {
+      Cypress.currentTest.retries(2);
+      cy.visit(Cypress.env("webdriver_uni"));
+      cy.get("#contact-us")
+        .invoke("removeAttr", "target")
+        .click({ force: true });
+      cy.get('[name="first_name"]').type(globalThis.data.first_name);
+      cy.get('[name="last_name"]').type(globalThis.data.last_name);
+      cy.get('[type="submit"]').click();
+      cy.get("body").contains("Error: all fields are required");
+    }
   });
 });

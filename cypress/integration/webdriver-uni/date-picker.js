@@ -2,7 +2,7 @@
 
 describe('Test Datepicker via webdriveruni', () =>{
     beforeEach(() => {
-        cy.visit('http://www.webdriveruniversity.com/')
+        cy.visit('https://www.webdriveruniversity.com/')
         cy.document().should('have.property', 'charset', 'UTF-8')
         cy.title().should('include','WebDriver')
         cy.get('#datepicker').invoke('removeAttr' ,'target').click()

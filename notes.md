@@ -3,6 +3,8 @@
 <https://www.automationteststore.com/>
 <http://www.webdriveruniversity.com/>
 
+## Course cypress version  4.12.1.
+
 ## Link for how to select elements
 
 <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors>s>
@@ -49,12 +51,14 @@ button[title="Submit"]
 
 ## Run your test scripts from the package.json file
 
-npm run triggerAllTests-headless
-npm run triggerAllTests-headed
-npm run triggerAllTests-chrome
+npm run triggerAllTests-headless //works
+npm run triggerAllTests-headed // works
+npm run triggerAllTests-chrome //works
 npm run triggerAllTests-dashboard
 npm run triggerAllTests-webdriver-uni
 npm run triggerAllTests-automation-dashboard
+npm run cypress-multi-browser // run test with multi browsers
+npm run delete-mochawesome-report //this works
 
 ## Merge junit results
 

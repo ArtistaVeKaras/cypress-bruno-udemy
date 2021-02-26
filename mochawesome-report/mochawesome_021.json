@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-02-26T10:49:10.336Z",
+    "end": "2021-02-26T10:49:15.290Z",
+    "duration": 4954,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a2d73f25-44a1-4acd-b839-e154303e4bca",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/alias-invoke.js",
+      "file": "cypress/integration/automation-test-store/alias-invoke.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0b5a16f4-2bd5-4c33-aad6-0750f4ef4ea0",
+          "title": "Alias and invoke",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "this test is the same as the above but logs the total amount of the price items",
+              "fullTitle": "Alias and invoke this test is the same as the above but logs the total amount of the price items",
+              "timedOut": null,
+              "duration": 3592,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".pricetag.jumbotron\").find(\".oneprice\").invoke(\"text\").as(\"itemPrice\"); //non sale prices\ncy.get(\".pricetag.jumbotron\").find(\".pricenew\").invoke(\"text\").as(\"newPrice\"); // new sale prices\nvar itemsTotal = 0;\ncy.get(\"@itemPrice\").then(function ($linkTxt) {\n  var itemsPriceTotal = 0;\n  var price = $linkTxt.split(\"$\");\n  for (var i = 0; i < price.length; i++) {\n    cy.log(price[i]);\n    itemsPriceTotal += Number(price[i]);\n  }\n  itemsTotal = +itemsPriceTotal;\n  cy.log(\"Non sale price items total: \" + itemsTotal);\n});\ncy.get(\"@newPrice\").then(function ($linkTxt) {\n  var saleItemPrice = 0;\n  var salePriceTotal = $linkTxt.split(\"$\");\n  for (var i = 0; i < salePriceTotal.length; i++) {\n    cy.log(salePriceTotal[i]);\n    saleItemPrice += Number(salePriceTotal[i]);\n  }\n  itemsTotal = +saleItemPrice;\n  cy.log(\"New sale price items total: \" + saleItemPrice);\n}).then(function () {\n  cy.log('The total price of all products: ' + itemsTotal);\n  expect(itemsTotal).to.equal(527.45);\n});",
+              "err": {
+                "message": "AssertionError: expected 403 to equal 527.45",
+                "estack": "AssertionError: expected 403 to equal 527.45\n    at Context.eval (https://www.automationteststore.com/__cypress/tests?p=cypress/integration/automation-test-store/alias-invoke.js:183:29)",
+                "diff": "- 403\n+ 527.45\n"
+              },
+              "uuid": "5c63e6f5-2388-4b50-9b69-4ff3d1f07f00",
+              "parentUUID": "0b5a16f4-2bd5-4c33-aad6-0750f4ef4ea0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5c63e6f5-2388-4b50-9b69-4ff3d1f07f00"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3592,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reporterDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

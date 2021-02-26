@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-26T10:54:40.437Z",
+    "end": "2021-02-26T10:54:49.168Z",
+    "duration": 8731,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8ba433e9-31f0-4f50-9850-63ec36d934da",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/inspect-item.js",
+      "file": "cypress/integration/automation-test-store/inspect-item.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "27ecbb21-0f52-481a-9b01-7099b84fc68a",
+          "title": "Automation Test Store",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to submit a successful submission via contact us form",
+              "fullTitle": "Automation Test Store should be able to submit a successful submission via contact us form",
+              "timedOut": null,
+              "duration": 4065,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.automationteststore.com/\");\ncy.document().should(\"have.property\", \"charset\", \"UTF-8\");\ncy.get('.prdocutname').contains('Skinsheen Bronzer Stick').click().then(function ($itemHeader) {\n  console.log('Selected text is: ' + $itemHeader.text());\n});\n/** \n * the log function will be executed right before the code is executed\n * the .then logs only after a a certain conditions is meet\n*/\nconsole.log('this should log now');",
+              "err": {},
+              "uuid": "7a71ae10-ca20-48d6-9f90-9c8e4cda8e9c",
+              "parentUUID": "27ecbb21-0f52-481a-9b01-7099b84fc68a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be able to submit a successful submission via contact us form",
+              "fullTitle": "Automation Test Store should be able to submit a successful submission via contact us form",
+              "timedOut": null,
+              "duration": 2888,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.automationteststore.com/\");\ncy.get('.fixed_wrapper').find('.prdocutname').eq(0).click();",
+              "err": {},
+              "uuid": "0138e94f-42e1-4e88-8845-84f3b8e04e3a",
+              "parentUUID": "27ecbb21-0f52-481a-9b01-7099b84fc68a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7a71ae10-ca20-48d6-9f90-9c8e4cda8e9c",
+            "0138e94f-42e1-4e88-8845-84f3b8e04e3a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6953,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reporterDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
