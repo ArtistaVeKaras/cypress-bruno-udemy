@@ -69,12 +69,13 @@ describe("Network Requests", () => {
         body: { error: message },
         headers: { "access-control-allow-origin": "*" },
         delayMs: 500,
-      }).as("putComment");
+      }
+    ).as("putComment");
 
     cy.get(".network-put").click();
 
     cy.wait("@putComment");
 
-    cy.get('.network-put-comment').should('contain', message)
+    cy.get(".network-put-comment").should("contain", message);
   });
 });

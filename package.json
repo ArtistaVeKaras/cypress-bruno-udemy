@@ -31,10 +31,9 @@
   },
   "homepage": "https://github.com/ArtistaVeKaras/cypress-bruno-udemy#readme",
   "devDependencies": {
-    "cypress": "^6.5.0",
+    "cypress": "^6.6.0",
     "cypress-file-upload": "^5.0.2",
     "cypress-multi-reporters": "^1.4.0",
-    "cypress-plugin-retries": "^1.5.2",
     "cypress-xpath": "^1.6.2",
     "mocha": "^8.3.0",
     "mocha-junit-reporter": "^2.0.0",

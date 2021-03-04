@@ -3,12 +3,24 @@
 describe("Test Contact Us form via Automation Test Store", () => {
   beforeEach(() => {
     cy.visit("https://www.automationteststore.com/");
-    cy.fixture('userDetails').then(function (data) {
+    cy.fixture("userDetails").then(function (data) {
       this.date = data;
       globalThis.data = data;
     });
   });
-  it("should be able to submit a successful submission via contact us form", () => {
+
+  /** 
+   * retries function..
+   * openMode runs the test via the test runner {e.x npx cypress open}
+   * runMode runs the test via the terminal {e.x npx cypress run}
+   * this config will override the default configuration in cypress.json file
+  */
+  it("should be able to submit a successful submission via contact us form",{
+    retries: {
+      runMode: 2,
+      openMode: 2
+    }
+  }, () => {
     cy.get('a[href$="contact"]')
       .click()
       .then(($contacText) => {

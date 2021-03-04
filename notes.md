@@ -78,4 +78,4 @@ npx cypress open --env configFile=staging
 
  ## Retries test if test fails
 
- CYPRESS_RETRIES=1 npm run triggerAllTests-automation-autostore
+ CYPRESS_RETRIES=2 npm run triggerAllTests-automation-autostore
