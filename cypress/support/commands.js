@@ -23,3 +23,42 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import "cypress-file-upload";
+
+Cypress.Commands.add("navigateToWebdriverHomePage", () => {
+  cy.visit("/");
+  cy.document().should("have.property", "charset", "UTF-8");
+  cy.title().should("include", "WebDriver");
+  cy.get("#dropdown-checkboxes-radiobuttons")
+    .invoke("removeAttr", "target")
+    .click();
+});
+
+Cypress.Commands.add("addProduct", (productName) => {
+  cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
+    if ($el.text().includes(productName)) {
+      cy.wrap($el).click();
+    }
+  });
+});
+
+Cypress.Commands.add("addProductToBasket", (productName) => {
+  cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
+    if ($el.text().includes(productName)) {
+      cy.log($el.text());
+      cy.get(".productcart").eq(index).click();
+    }
+  });
+});
+
+Cypress.Commands.add(
+  "webdriverUniSubmissionForm",
+  (firstName, lastName, email, comment, $selector, text) => {
+    cy.get('[name="first_name"]').type(firstName);
+    cy.get('[name="last_name"]').type(lastName);
+    cy.get('[name="email"]').type(email);
+    cy.get("textarea.feedback-input").type(comment);
+    cy.get('[type="submit"]').click();
+    cy.get($selector).contains(text);
+  }
+);

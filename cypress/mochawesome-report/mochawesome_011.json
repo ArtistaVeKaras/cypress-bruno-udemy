@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-26T10:44:03.688Z",
+    "end": "2021-02-26T10:44:07.440Z",
+    "duration": 3752,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a84abcaf-c52d-4f1e-a378-7ed56f95e81c",
+      "title": "",
+      "fullFile": "cypress/integration/webdriver-uni/date-picker.js",
+      "file": "cypress/integration/webdriver-uni/date-picker.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e4bc51c-dea7-4520-8aae-7318dbd12998",
+          "title": "Test Datepicker via webdriveruni",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Select date-picker from date picker",
+              "fullTitle": "Test Datepicker via webdriveruni Select date-picker from date picker",
+              "timedOut": null,
+              "duration": 3677,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// let date = new Date()\n// date.setDate(date.getDate())\n// cy.log(date.getDate()) //get current day i.e 22\n// let date1 = new Date()\n// date1.setDate(date.getDate() + 5)\n// cy.log(date1.getDate()) //get future day with 5 days added to the current date i.e 22 + 5 = 27\nvar date = new Date();\ndate.setDate(date.getDate() + 243); //plus 1 will add an extra day to the current date\nvar futureYear = date.getFullYear();\nvar futureMonth = date.toLocaleString('default', {\n  month: 'long'\n});\nvar futureDay = date.getDate();\ncy.log('Future year to select: ' + futureYear);\ncy.log('Future month to select: ' + futureMonth);\ncy.log('Future day to select: ' + futureDay);\ncy.get('.input-group-addon').click();\nfunction selectMonthAndYear() {\n  cy.get('.datepicker-dropdown').find('.datepicker-switch').first().then(function ($datePicker) {\n    cy.log('The future date is: ' + $datePicker.text()); //log all months until it reaches the desired date\n    if (!$datePicker.text().includes(futureYear)) {\n      cy.get('.next').first().click();\n      selectMonthAndYear();\n    }\n  }).then(function () {\n    cy.get('.datepicker-dropdown').find('.datepicker-switch').first().then(function ($datePicker) {\n      if (!$datePicker.text().includes(futureMonth)) {\n        cy.get('.next').first().click();\n        selectMonthAndYear();\n      }\n    });\n  });\n}\nfunction selectDay() {\n  cy.get('[class=\"day\"]').contains(futureDay).click();\n}\nselectMonthAndYear();\nselectDay();",
+              "err": {},
+              "uuid": "6949fabe-3fec-465f-89fa-dd2eb130b7b6",
+              "parentUUID": "1e4bc51c-dea7-4520-8aae-7318dbd12998",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6949fabe-3fec-465f-89fa-dd2eb130b7b6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3677,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reporterDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

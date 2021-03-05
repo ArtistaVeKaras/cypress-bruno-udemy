@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-26T10:43:24.275Z",
+    "end": "2021-02-26T10:43:27.816Z",
+    "duration": 3541,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "48ec33ab-2ccd-4c19-95d7-b6609a47513d",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/variable-and-cy-command.js",
+      "file": "cypress/integration/automation-test-store/variable-and-cy-command.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90b0e94c-4f08-4067-ba74-2463fb688f04",
+          "title": "Verifying variables, cyress commands and hquery commands",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigating to specific product pages",
+              "fullTitle": "Verifying variables, cyress commands and hquery commands Navigating to specific product pages",
+              "timedOut": null,
+              "duration": 1760,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://automationteststore.com/index.php?rt=content/contact'); //Use cypress commands and chaining\ncy.contains('#ContactUsFrm', 'Contact Us Form').find('#field_11').should('contain', 'First name:');\ncy.contains('#ContactUsFrm', 'Contact Us Form').find('#field_12').should('contain', 'Email:');\ncy.contains('#ContactUsFrm', 'Contact Us Form').find('#field_13').should('contain', 'Enquiry:'); //Jquery approach\ncy.contains('#ContactUsFrm', 'Contact Us Form').then(function ($itemText) {\n  var firstNameTxt = $itemText.find('#field_11').text();\n  expect(firstNameTxt).to.contain('First name:');\n});",
+              "err": {},
+              "uuid": "712a16c9-ee03-45d9-aa93-6149eac96f4d",
+              "parentUUID": "90b0e94c-4f08-4067-ba74-2463fb688f04",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "712a16c9-ee03-45d9-aa93-6149eac96f4d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1760,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reporterDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

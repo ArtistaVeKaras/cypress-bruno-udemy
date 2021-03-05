@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-02-26T10:52:07.222Z",
+    "end": "2021-02-26T10:52:14.011Z",
+    "duration": 6789,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "43771485-58ad-41b1-8547-8b337cc983fb",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/inspect-item.js",
+      "file": "cypress/integration/automation-test-store/inspect-item.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fcc8cdd1-95f0-4bb2-96e9-06d4d48ecc61",
+          "title": "Automation Test Store",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be able to submit a successful submission via contact us form",
+              "fullTitle": "Automation Test Store should be able to submit a successful submission via contact us form",
+              "timedOut": null,
+              "duration": 172,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.automationteststore.com/\");\ncy.document().should(\"have.property\", \"charset\", \"UTF-8\");\ncy.get('.prdocutname').contains('Skinsheen Bronzer Stick').click().then(function ($itemHeader) {\n  console.log('Selected text is: ' + $itemHeader.text());\n});\n/** \n * the log function will be executed right before the code is executed\n * the .then logs only after a a certain conditions is meet\n*/\nconsole.log('this should log now');",
+              "err": {
+                "message": "Error: Removing cookie failed for: {\"url\":\"https://www.automationteststore.com/\",\"name\":\"language\"}",
+                "estack": "Error: Removing cookie failed for: {\"url\":\"https://www.automationteststore.com/\",\"name\":\"language\"}\n    throwError@webpack:///./app/background.js?:115:36\n    clear/<@webpack:///./app/background.js?:125:16\nFrom previous event:\n    clear@webpack:///./app/background.js?:120:10\nFrom previous event:\n    clear@webpack:///./app/background.js?:130:6\n    clearCookie@webpack:///./app/background.js?:178:17\n    invoke/<@webpack:///./app/background.js?:63:33\nFrom previous event:\n    invoke@webpack:///./app/background.js?:62:20\n    connect/<@webpack:///./app/background.js?:82:16\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    emitEvent@webpack:///../socket/node_modules/socket.io-client/build/socket.js?:253:20\n    onevent@webpack:///../socket/node_modules/socket.io-client/build/socket.js?:240:18\n    onpacket@webpack:///../socket/node_modules/socket.io-client/build/socket.js?:204:22\n    module.exports/<@webpack:////root/cypress/node_modules/component-bind/index.js?:21:15\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    ondecoded@webpack:///../socket/node_modules/socket.io-client/build/manager.js?:207:15\n    module.exports/<@webpack:////root/cypress/node_modules/component-bind/index.js?:21:15\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    add@webpack:///../socket/node_modules/socket.io-parser/dist/index.js?:118:23\n    ondata@webpack:///../socket/node_modules/socket.io-client/build/manager.js?:199:22\n    module.exports/<@webpack:////root/cypress/node_modules/component-bind/index.js?:21:15\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    onPacket@webpack:///../socket/node_modules/engine.io-client/lib/socket.js?:387:16\n    setTransport/<@webpack:///../socket/node_modules/engine.io-client/lib/socket.js?:196:14\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    onPacket@webpack:///../socket/node_modules/engine.io-client/lib/transport.js?:103:10\n    onData@webpack:///../socket/node_modules/engine.io-client/lib/transport.js?:96:10\n    addEventListeners/this.ws.onmessage@webpack:///../socket/node_modules/engine.io-client/lib/transports/websocket.js?:108:12",
+                "diff": null
+              },
+              "uuid": "32d1da77-ee61-4f50-a3cf-a53fc2e80a47",
+              "parentUUID": "fcc8cdd1-95f0-4bb2-96e9-06d4d48ecc61",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be able to submit a successful submission via contact us form",
+              "fullTitle": "Automation Test Store should be able to submit a successful submission via contact us form",
+              "timedOut": null,
+              "duration": 4981,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.automationteststore.com/\");\ncy.get('.fixed_wrapper').find('.prdocutname').eq(0).click();",
+              "err": {},
+              "uuid": "1b5521d5-95b2-4de2-92e1-a381f55b4422",
+              "parentUUID": "fcc8cdd1-95f0-4bb2-96e9-06d4d48ecc61",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b5521d5-95b2-4de2-92e1-a381f55b4422"
+          ],
+          "failures": [
+            "32d1da77-ee61-4f50-a3cf-a53fc2e80a47"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5153,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reporterDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

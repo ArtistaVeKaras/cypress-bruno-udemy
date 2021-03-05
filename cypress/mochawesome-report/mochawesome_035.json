@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-02-26T10:54:25.498Z",
+    "end": "2021-02-26T10:54:28.299Z",
+    "duration": 2801,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8e2bd380-0113-4020-92cf-ec6fcdda795e",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/alias-invoke.js",
+      "file": "cypress/integration/automation-test-store/alias-invoke.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b64e1759-8487-45ed-820b-54ccc89f2822",
+          "title": "Alias and invoke",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "this test is the same as the above but logs the total amount of the price items",
+              "fullTitle": "Alias and invoke this test is the same as the above but logs the total amount of the price items",
+              "timedOut": null,
+              "duration": 350,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".pricetag.jumbotron\").find(\".oneprice\").invoke(\"text\").as(\"itemPrice\"); //non sale prices\ncy.get(\".pricetag.jumbotron\").find(\".pricenew\").invoke(\"text\").as(\"newPrice\"); // new sale prices\nvar itemsTotal = 0;\ncy.get(\"@itemPrice\").then(function ($linkTxt) {\n  var itemsPriceTotal = 0;\n  var price = $linkTxt.split(\"$\");\n  for (var i = 0; i < price.length; i++) {\n    cy.log(price[i]);\n    itemsPriceTotal += Number(price[i]);\n  }\n  itemsTotal = +itemsPriceTotal;\n  cy.log(\"Non sale price items total: \" + itemsTotal);\n});\ncy.get(\"@newPrice\").then(function ($linkTxt) {\n  var saleItemPrice = 0;\n  var salePriceTotal = $linkTxt.split(\"$\");\n  for (var i = 0; i < salePriceTotal.length; i++) {\n    cy.log(salePriceTotal[i]);\n    saleItemPrice += Number(salePriceTotal[i]);\n  }\n  itemsTotal = +saleItemPrice;\n  cy.log(\"New sale price items total: \" + saleItemPrice);\n}).then(function () {\n  cy.log('The total price of all products: ' + itemsTotal);\n  expect(itemsTotal).to.equal(527.45);\n});",
+              "err": {
+                "message": "Error: Removing cookie failed for: {\"url\":\"https://www.automationteststore.com/\",\"name\":\"language\"}\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.",
+                "estack": "Error: Removing cookie failed for: {\"url\":\"https://www.automationteststore.com/\",\"name\":\"language\"}\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    throwError@webpack:///./app/background.js?:115:36\n    clear/<@webpack:///./app/background.js?:125:16\nFrom previous event:\n    clear@webpack:///./app/background.js?:120:10\nFrom previous event:\n    clear@webpack:///./app/background.js?:130:6\n    clearCookie@webpack:///./app/background.js?:178:17\n    invoke/<@webpack:///./app/background.js?:63:33\nFrom previous event:\n    invoke@webpack:///./app/background.js?:62:20\n    connect/<@webpack:///./app/background.js?:82:16\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    emitEvent@webpack:///../socket/node_modules/socket.io-client/build/socket.js?:253:20\n    onevent@webpack:///../socket/node_modules/socket.io-client/build/socket.js?:240:18\n    onpacket@webpack:///../socket/node_modules/socket.io-client/build/socket.js?:204:22\n    module.exports/<@webpack:////root/cypress/node_modules/component-bind/index.js?:21:15\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    ondecoded@webpack:///../socket/node_modules/socket.io-client/build/manager.js?:207:15\n    module.exports/<@webpack:////root/cypress/node_modules/component-bind/index.js?:21:15\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    add@webpack:///../socket/node_modules/socket.io-parser/dist/index.js?:118:23\n    ondata@webpack:///../socket/node_modules/socket.io-client/build/manager.js?:199:22\n    module.exports/<@webpack:////root/cypress/node_modules/component-bind/index.js?:21:15\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    onPacket@webpack:///../socket/node_modules/engine.io-client/lib/socket.js?:387:16\n    setTransport/<@webpack:///../socket/node_modules/engine.io-client/lib/socket.js?:196:14\n    Emitter.prototype.emit@webpack:////root/cypress/node_modules/component-emitter/index.js?:145:20\n    onPacket@webpack:///../socket/node_modules/engine.io-client/lib/transport.js?:103:10\n    onData@webpack:///../socket/node_modules/engine.io-client/lib/transport.js?:96:10\n    addEventListeners/this.ws.onmessage@webpack:///../socket/node_modules/engine.io-client/lib/transports/websocket.js?:108:12",
+                "diff": null
+              },
+              "uuid": "a39c6f77-65c9-4368-93ee-225a83a8ffdd",
+              "parentUUID": "b64e1759-8487-45ed-820b-54ccc89f2822",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a39c6f77-65c9-4368-93ee-225a83a8ffdd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 350,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reporterDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
