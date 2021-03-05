@@ -18,8 +18,10 @@ describe("Interact with autocomplpete", () => {
         cy.log(prod);
         const productSelect = "Avacado";
         if (prod === productSelect) {
-          $el.click();
+          $el.click(); // apparently this has been deprecated
+          // $el.trigger('click')
           cy.get("#submit-button").click();
+
           cy.url().should("include", productSelect);
         }
       })
@@ -30,6 +32,7 @@ describe("Interact with autocomplpete", () => {
           const productSelect = "Grapes";
           if (prod === productSelect) {
             $el.click();
+            // $el.trigger('click')
             cy.get("#submit-button").click();
             cy.url().should("include", "Grapes");
           }

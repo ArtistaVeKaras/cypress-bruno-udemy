@@ -3,7 +3,7 @@
 <https://www.automationteststore.com/>
 <http://www.webdriveruniversity.com/>
 
-## Course cypress version  4.12.1.
+## Course cypress version 4.12.1.
 
 ## Link for how to select elements
 
@@ -59,6 +59,8 @@ npm run triggerAllTests-webdriver-uni
 npm run triggerAllTests-automation-dashboard
 npm run cypress-multi-browser // run test with multi browsers
 npm run delete-mochawesome-report //this works
+npm run triggerAllTests-featureRegressiontags
+npm run triggerAllTests-featureRegressionTags-headless
 
 ## Merge junit results
 
@@ -66,7 +68,7 @@ npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml
 
 ## Merge moachwasome results
 
-npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json
+npx mochawesome-merge cypress/results/mochawesome/\*.json > mochawesome.json && npx marge mochawesome.json
 
 ## Use values store in the config file
 
@@ -74,8 +76,16 @@ npx cypress open --env configFile=staging
 
 ## Run test with the configFile configuration
 
- npx cypress run --spec cypress/integration/webdriver-uni/contactus.js --env configFile=staging
+npx cypress run --spec cypress/integration/webdriver-uni/contactus.js --env configFile=staging
 
- ## Retries test if test fails
+## Retries test if test fails
 
- CYPRESS_RETRIES=2 npm run triggerAllTests-automation-autostore
+CYPRESS_RETRIES=2 npm run triggerAllTests-automation-autostore
+
+## Run bunble feature files
+
+cypress run --spec \*_/_.features
+
+## Runs all cucumber test files that contain regression tags
+
+npx cypress-tags run -e TAGS="@regression" --headed chrome

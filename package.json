@@ -11,6 +11,8 @@
     "triggerAllTests-webdriver": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "triggerAllTests-autostore": "npx cypress run --spec cypress/integration//automation-test-store/*",
     "triggerAllTests-autostore-dashboard": "npx cypress run --spec cypress/integration//automation-test-store/* --record --key 8ed5fa4c-e487-431b-a423-62d7f40b1775",
+    "triggerAllTests-featureRegressionTags": "npx cypress-tags run -e TAGS='@regression' --headed chrome",
+    "triggerAllTests-featureRegressionTags-headless": "npx cypress-tags run -e TAGS='@regression' --headless",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
     "delete-results": "rm -rf cypress/results/* || true",
@@ -32,6 +34,7 @@
   "homepage": "https://github.com/ArtistaVeKaras/cypress-bruno-udemy#readme",
   "devDependencies": {
     "cypress": "^6.6.0",
+    "cypress-cucumber-preprocessor": "^4.0.1",
     "cypress-file-upload": "^5.0.2",
     "cypress-multi-reporters": "^1.4.0",
     "cypress-xpath": "^1.6.2",
@@ -40,5 +43,8 @@
     "mochawesome": "^6.2.2",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
