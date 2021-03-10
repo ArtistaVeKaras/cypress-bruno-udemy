@@ -13,6 +13,7 @@ describe("Alias and invoke", () => {
     cy.get("@productThumbNail").its("length").should("be.gt", 5);
     cy.get("@productThumbNail").should("include", "Seaweed Conditioner");
   });
+
   it("Validate a specific product thumbnail challenge", () => {
     cy.get(".thumbnail").as("thumbnail");
     cy.get("@thumbnail").should("have.length", 16);
@@ -21,6 +22,7 @@ describe("Alias and invoke", () => {
       .invoke("attr", "title")
       .should("include", "Add to Cart");
   });
+
   it("Lists the amount of non sale product items", () => {
     cy.get(".thumbnail").as("thumbnail");
     cy.get("@thumbnail")
@@ -29,6 +31,7 @@ describe("Alias and invoke", () => {
         cy.log($el.text());
       });
   });
+
   /**
    * same as the above it only splits the
    * $ sign fron the text
@@ -42,10 +45,11 @@ describe("Alias and invoke", () => {
       }
     });
   });
-  /** 
+
+  /**
    * same as the above but logs the items prices
    * for the Makeup page
-  */
+   */
   it("should list the amount of all products in the makeup page", () => {
     cy.get('a[href*="product/category&path"]').contains("Makeup").click();
     cy.get(".pricetag.jumbotron")
@@ -59,6 +63,7 @@ describe("Alias and invoke", () => {
       }
     });
   });
+
   it.only("this test is the same as the above but logs the total amount of the price items", () => {
     cy.get(".pricetag.jumbotron")
       .find(".oneprice")
@@ -82,21 +87,21 @@ describe("Alias and invoke", () => {
       cy.log("Non sale price items total: " + itemsTotal);
     });
 
-    
-    cy.get("@newPrice").then(($linkTxt) => {
-      var saleItemPrice = 0;
-      var salePriceTotal = $linkTxt.split("$");
+    cy.get("@newPrice")
+      .then(($linkTxt) => {
+        var saleItemPrice = 0;
+        var salePriceTotal = $linkTxt.split("$");
 
-      for (var i = 0; i < salePriceTotal.length; i++) {
-        cy.log(salePriceTotal[i]);
-        saleItemPrice += Number(salePriceTotal[i]);
-      }
-      itemsTotal = +saleItemPrice;
-      cy.log("New sale price items total: " + saleItemPrice);
-    })
-    .then(() =>{
-      cy.log('The total price of all products: ' + itemsTotal)
-      expect(itemsTotal).to.equal(527.45)
-    })
+        for (var i = 0; i < salePriceTotal.length; i++) {
+          cy.log(salePriceTotal[i]);
+          saleItemPrice += Number(salePriceTotal[i]);
+        }
+        itemsTotal = +saleItemPrice;
+        cy.log("New sale price items total: " + saleItemPrice);
+      })
+      .then(() => {
+        cy.log("The total price of all products: " + itemsTotal);
+        expect(itemsTotal).to.equal(527.45);
+      });
   });
 });

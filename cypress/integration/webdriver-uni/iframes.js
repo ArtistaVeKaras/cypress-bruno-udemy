@@ -2,13 +2,11 @@
 
 beforeEach(() => {
   cy.visit("/");
+  cy.get("#iframe").invoke("removeAttr", "target").click({ force: true });
 });
 
 describe("Handle Iframes & Models", () => {
   it("Handle webdriver iframe * Models", () => {
-    cy.visit("https://www.webdriveruniversity.com/");
-    cy.get("#iframe").invoke("removeAttr", "target").click({ force: true });
-
     cy.get("#frame").then(($iframe) => {
       const body = $iframe.contents().find("body");
       cy.wrap(body).as("iframe");

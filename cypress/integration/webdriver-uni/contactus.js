@@ -5,7 +5,11 @@ import ContactUsPage_PO from "../../support/pageObject/webdriver-uni/ContactUsPa
 describe("Test Contact Us form via WebDriverUni", () => {
   const contactUsPage = new ContactUsPage_PO();
   const homepage = new HomePage_PO();
+
   before(function () {
+    /**
+     * get data from the fixture file
+     */
     cy.fixture("example").then(function (data) {
       this.data = data;
       globalThis.data = data;
@@ -30,7 +34,12 @@ describe("Test Contact Us form via WebDriverUni", () => {
       "Thank You for your Message!"
     );
   });
-  it("should not be able to submit a successful submission via contact us form as all fields are required", () => {
+
+  /**
+   * the same as the above but
+   * uses the cypress command.Add file
+   */
+  it.only("should not be able to submit a successful submission via contact us form as all fields are required", () => {
     cy.webdriverUniSubmissionForm(
       globalThis.data.first_name,
       globalThis.data.last_name,
@@ -40,6 +49,7 @@ describe("Test Contact Us form via WebDriverUni", () => {
       "Error: Invalid email address"
     );
   });
+
   /**
    * does the same as the above
    * but extract data from the env file
@@ -55,6 +65,7 @@ describe("Test Contact Us form via WebDriverUni", () => {
       "Error: Invalid email address"
     );
   });
+
   /**
    * this test does not open a new tab
    * when clicking on a new link tab
@@ -62,7 +73,6 @@ describe("Test Contact Us form via WebDriverUni", () => {
    * this is just a comment
    */
   it("should not be able to submit a successful submission via contact us form as all fields are required", () => {
-    Cypress.currentTest.retries(2);
     cy.visit(Cypress.env("webdriver_uni"));
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
     cy.get('[name="first_name"]').type(globalThis.data.first_name);
@@ -70,17 +80,16 @@ describe("Test Contact Us form via WebDriverUni", () => {
     cy.get('[type="submit"]').click();
     cy.get("body").contains("Error: all fields are required");
   });
+
   /**
    * the same as the above but the test only runs if
    * the browser is set to firefox
    */
   it("should not be able to submit a successful submission via contact us form as all fields are required", () => {
     if (Cypress.isBrowser("firefox")) {
-      cy.log('I am running in a firefox browser')
-      //code block goes here      
-    }
-     else {
-      Cypress.currentTest.retries(2);
+      cy.log("I am running in a firefox browser");
+      //code block goes here
+    } else {
       cy.visit(Cypress.env("webdriver_uni"));
       cy.get("#contact-us")
         .invoke("removeAttr", "target")

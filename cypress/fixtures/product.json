@@ -1,7 +1,20 @@
 {
-    "productName": [
-        "Eau Parfumee au The Vert Shampoo",
-        "Pantene Pro-V Conditioner, Classic Care",
-        "Curls to straight Shampoo"
-    ]
+  "productName": [
+    "Eau Parfumee au The Vert Shampoo",
+    "Pantene Pro-V Conditioner, Classic Care",
+    "Curls to straight Shampoo"
+  ],
+
+  "bookName": [
+    "The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life",
+    "Paper Towns by John Green",
+    "Allegiant by Veronica Roth",
+    "New French With Ease (1 book + 1 mp3 CD)"
+  ],
+
+  "skinCare": [
+    "Absolue Eye Precious Cells",
+    "Absolute Anti-Age Spot Replenishing Unifying TreatmentSPF 15",
+    "Total Moisture Facial Cream"
+  ]
 }

@@ -1,8 +1,8 @@
 /// <reference types="Cypress" />
 
 beforeEach(() => {
-  // cy.viewport(550, 650);
-  cy.visit("https://www.webdriveruniversity.com/");
+  cy.viewport(550, 650);
+  cy.visit("/");
   cy.document().should("have.property", "charset", "UTF-8");
   cy.title().should("include", "WebDriver");
 });
@@ -27,16 +27,33 @@ describe("Interact with autocomplpete", () => {
       })
       .then(() => {
         cy.get("#myInput").type("g");
-        cy.get("#myInputautocomplete-list > *").each(($el, index, $list) => {
-          const prod = $el.text();
-          const productSelect = "Grapes";
-          if (prod === productSelect) {
-            $el.click();
-            // $el.trigger('click')
-            cy.get("#submit-button").click();
-            cy.url().should("include", "Grapes");
-          }
-        });
+        cy.get("#myInputautocomplete-list > *")
+          .each(($el, index, $list) => {
+            const prod = $el.text();
+            const productSelect = "Grapes";
+            if (prod === productSelect) {
+              $el.click();
+              // $el.trigger('click')
+              cy.get("#submit-button").click();
+              cy.url().should("include", "Grapes");
+            }
+          })
+          .then(() => {
+            cy.get("#myInput").type("b");
+            cy.get("#myInputautocomplete-list > *").each(
+              ($el, index, $list) => {
+                const prod = $el.text();
+                cy.log(prod);
+                const productName = "bacon";
+                if ($el.text() == productName) {
+                  $el.click();
+
+                  cy.get("#submit-button").click();
+                  cy.url().should("include", productname);
+                }
+              }
+            );
+          });
       });
   });
 });
